@@ -1,0 +1,26 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'Parking/Adapt.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Parking/Maman.css' %}">
+    <title>Effectuez le Paiement</title>
+  </head>
+  <body>
+    <header style="background-image: url('parking.jpg');">
+      <h1>Mon site de parking</h1>
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        <label for="amount">Montant à payer :</label>
+        <input type="number" id="amount" name="amount"><br>
+        <label for="card_number">Numéro de carte :</label>
+        <input type="text" id="card_number" name="card_number"><br>
+        <label for="expiration_date">Date d'expiration (MM/AA) :</label>
+        <input type="text" id="expiration_date" name="expiration_date"><br>
+        <label for="cvv">Code CVV :</label>
+        <input type="password" id="cvv" name="cvv"><br>
+        <button type="submit">Payer</button>
+      </form>
+  </body>
+</html>

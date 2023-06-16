@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'Parking/Adapt.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'Parking/Maman.css' %}">
+    <title>Formulaire d'enregistrement</title>
+  </head>
+  <body>
+    <header style="background-image: url('parking.jpg');">
+      <h1>Mon site de parking</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'accueil' %}">Accueil</a></li>
+        <li><a href="{% url 'tarifs' %}">Tarifs</a></li>
+        <li><a href="{% url 'reservation' %}">Réservation</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Formulaire d'enregistrement</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+          <ul>
+            {% for error in field.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+      <button type="submit">Register</button>
+    </form>
+    <footer>
+      <div>
+        <h3>Contact</h3>
+        <p>Téléphone : +212 600696925</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+
+

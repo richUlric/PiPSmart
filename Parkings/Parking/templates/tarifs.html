@@ -1,0 +1,38 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="{%static 'Parking/Adapt.css'%}">
+	<title>Tarifs - Mon site de parking</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'Parking/Maman.css'%}">
+</head>
+<body>
+	<header style="background-image: url('parking.jpg');">
+		<h1>Mon site de parking</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="{% url 'accueil'%}">Accueil</a></li>
+			<li class="active"><a href="#">Tarifs</a></li>
+			<li><a href="{% url 'reservation'%}">Réservation</a></li>
+			<li><a href="{% url 'contact'%}">Contact</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h2>Tarifs</h2>
+		<p>Nous vous proposons les tarifs suivants :</p>
+		<ul>
+			<li>1 heure : 2€</li>
+			<li>2 heures : 3,50€</li>
+			<li>3 heures : 5€</li>
+			<li>Journée (maximum 24 heures) : 10€</li>
+		</ul>
+	</main>
+	<footer>
+		<div>
+			<h3>Contact</h3>
+			<p>Téléphone : +212 600696925</p>
+		</div>
+	</footer>
+</body>
+</html>

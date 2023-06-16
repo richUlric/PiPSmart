@@ -1,0 +1,98 @@
+/* --- BODY --- */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F0F0F0;
+}
+
+/* --- HEADER --- */
+
+header {
+  background-color: #333333;
+  color: #FFFFFF;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* --- NAVIGATION --- */
+
+nav {
+  background-color: #CCCCCC;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: #333333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #DDDDDD;
+}
+
+/* --- FORMS --- */
+
+form {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #333333;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #444444;
+}
+
+/* --- FOOTER --- */
+
+footer {
+  background-color: #DDDDDD;
+  padding: 20px;
+}
+
+footer h3 {
+  margin-top: 0;
+}

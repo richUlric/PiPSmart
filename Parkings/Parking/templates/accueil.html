@@ -1,0 +1,34 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="{%static 'Parking/Adapt.css'%}">
+    <title>Accueil - Mon site de parking</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'Parking/Maman.css'%}">
+  </head>
+  <body>
+    <header>
+      <h1>Mon site de parking</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'accueil'%}">Accueil</a></li>
+        <li><a href="{% url 'tarifs'%}">Tarifs</a></li>
+        <li><a href="{% url 'reservation'%}">Réservation</a></li>
+        <li><a href="{% url 'contact'%}">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Bienvenue sur le site de parking</h2>
+      <p>
+Welcome to our parking website! Experience hassle-free parking at your fingertips. Find and reserve the perfect parking spot in seconds. Say goodbye to circling endlessly and hello to convenience. Our user-friendly interface ensures a seamless navigation experience. Rest easy knowing your vehicle is safe with our trusted parking partners. Stay updated on regulations and discover valuable insights. Enjoy the convenience of our innovative parking solutions. Explore now and let us take care of your parking needs. Welcome to stress-free parking!
+ </p>
+  
+   <a href="{% url 'Connexion'%}">Se connecter</a>  </main>
+    
+    <footer>
+      <h3>Contact</h3>
+      <p>Téléphone : +212 600696925</p>
+    </footer>
+  </body>
+</html>

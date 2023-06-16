@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Réservation</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'Parking/Adapt.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Parking/Maman.css' %}">
+  <style>
+    /* Add any additional custom styles here */
+    .map-container {
+      height: 400px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Réservation</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" placeholder="Enter your destination" required>
+    </div>
+    <button type="submit">Créer la réservation</button>
+  </form>
+  <div id="map" class="map-container"></div>
+
+  <script>
+    function initMap() {
+      var casablanca = { lat: 33.5731, lng: -7.5898 }; // Coordinates for Casablanca
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: casablanca,
+        zoom: 12
+      });
+
+      var marker = new google.maps.Marker({
+        position: casablanca,
+        map: map,
+        title: 'Casablanca'
+      });
+
+      // Request parking places from the Google Places API
+      var request = {
+        location: casablanca,
+        radius: '500',
+        type: 'parking'
+      };
+
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+
+      // Callback function to handle the response from the Google Places API
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      // Create a marker for each parking place
+      function createMarker(place) {
+        var marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
+      }
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmpQwMwIZLyebc26XjVr2tPCjZYFxoPOE&callback=initMap&libraries=places" async defer></script>
+</body>
+</html>

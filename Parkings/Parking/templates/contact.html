@@ -1,0 +1,43 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="{%static 'Parking/Adapt.css'%}">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'Parking/Maman.css'%}">
+  </head>
+  <body>
+    <header>
+      <h1>Mon site de parking</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'accueil'%}">Accueil</a></li>
+        <li><a href="{% url 'tarifs'%}">Tarifs</a></li>
+        <li><a href="{% url 'reservation'%}">Réservation</a></li>
+        <li class="active"><a href="contact'%}">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <h2>Nous contacter</h2>
+    <form action="envoi_message.php" method="post">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+  
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" required></textarea>
+  
+      <input type="submit" value="Envoyer">
+    </form>
+  
+    <footer>
+      <div>
+        <h3>Contact</h3>
+        <p>Téléphone : +212 600696925</p>
+      </div>
+    </footer>
+  </body>
+</html>

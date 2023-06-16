@@ -1,0 +1,17 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paiement réussi</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Parking/Adapt.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Parking/Maman.css' %}">
+    
+  </head>
+  <body>
+    <h2>Paiement réussi!</h2>
+    <p>Merci pour la confiance en nous placée.</p>
+
+    <h3>QR Code:</h3>
+    <img src="{{ qr_code_img }}" alt="QR Code">
+  </body>
+</html>
